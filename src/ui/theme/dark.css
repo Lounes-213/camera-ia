@@ -1,0 +1,74 @@
+/* =============================================================================
+   Dark theme — deep warm-black surfaces with orange accents and glow.
+   ========================================================================== */
+
+:root[data-theme='dark'] {
+  color-scheme: dark;
+
+  /* Surfaces */
+  --surface-base: var(--warm-950);
+  --surface-raised: rgba(23, 18, 14, 0.72);
+  --surface-sunken: var(--warm-900);
+  --surface-overlay: rgba(14, 11, 9, 0.86);
+  --surface-solid: var(--warm-800);
+  --surface-muted: var(--warm-800);
+  --surface-inverse: var(--warm-50);
+
+  /* Text */
+  --text-primary: #ffffff;
+  --text-secondary: rgba(255, 255, 255, 0.76);
+  --text-tertiary: rgba(255, 255, 255, 0.56);
+  --text-inverse: var(--warm-950);
+  --text-on-accent: #1a0d00;
+
+  /* Borders */
+  --border-soft: rgba(255, 255, 255, 0.09);
+  --border-medium: rgba(255, 255, 255, 0.16);
+  --border-strong: rgba(255, 255, 255, 0.28);
+  --border-glass: rgba(255, 255, 255, 0.12);
+
+  /* Accents */
+  --accent: var(--orange-500);
+  --accent-hover: var(--orange-400);
+  --accent-pressed: var(--orange-600);
+  --accent-soft: rgba(255, 122, 0, 0.16);
+  --accent-soft-strong: rgba(255, 122, 0, 0.28);
+  --accent-contrast: #1a0d00;
+  --accent-ring: rgba(255, 122, 0, 0.45);
+
+  /* Status */
+  --status-success: #2fd68a;
+  --status-warning: #ffc53d;
+  --status-danger: #ff6369;
+  --status-info: #5b9dff;
+
+  /* Glass panel */
+  --glass-bg: rgba(23, 18, 14, 0.62);
+  --glass-bg-strong: rgba(14, 11, 9, 0.82);
+  --glass-border: rgba(255, 255, 255, 0.11);
+  --glass-blur: 24px;
+  --glass-shadow: 0 20px 50px -20px rgba(0, 0, 0, 0.8);
+
+  /* Effects */
+  --scrim: rgba(0, 0, 0, 0.5);
+  --scrim-strong: rgba(0, 0, 0, 0.7);
+  --shimmer: linear-gradient(
+    100deg,
+    rgba(255, 255, 255, 0) 20%,
+    rgba(255, 255, 255, 0.08) 50%,
+    rgba(255, 255, 255, 0) 80%
+  );
+  --focus-ring: 0 0 0 3px rgba(255, 143, 38, 0.5);
+  --tap-highlight: rgba(255, 122, 0, 0.2);
+}
+
+/* Fallback when JS has not resolved the theme yet. */
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme]) {
+    color-scheme: dark;
+    --surface-base: var(--warm-950);
+    --text-primary: #ffffff;
+    --text-secondary: rgba(255, 255, 255, 0.76);
+    --border-soft: rgba(255, 255, 255, 0.09);
+  }
+}

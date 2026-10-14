@@ -1,0 +1,137 @@
+{
+  "version": 1,
+  "generatedFor": "WebAR Spatial 3D Anchor & Canvas",
+  "note": "Attribution for every model source the app can load. Models fetched at runtime are additionally recorded in the user's own credits list (IndexedDB) and shown in the in-app Credits dialog.",
+  "sources": [
+    {
+      "provider": "builtin",
+      "name": "Procedural objects",
+      "license": "MIT",
+      "licenseUrl": "https://opensource.org/license/mit",
+      "attribution": "Generated at runtime by this project. No attribution required.",
+      "models": [
+        "torusKnot",
+        "icosahedron",
+        "crystal",
+        "cubeGrid",
+        "orbitSphere",
+        "rocket",
+        "robot"
+      ]
+    },
+    {
+      "provider": "local",
+      "name": "Bundled offline index",
+      "repository": "https://github.com/KhronosGroup/glTF-Sample-Assets",
+      "note": "CC0 1.0 and CC-BY 4.0 models served from the Khronos Group sample asset repository and cached locally after first use.",
+      "models": [
+        {
+          "id": "khronos:lantern",
+          "title": "Lantern",
+          "author": "Microsoft",
+          "license": "CC0-1.0",
+          "sourceUrl": "https://github.com/KhronosGroup/glTF-Sample-Assets/tree/main/Models/Lantern"
+        },
+        {
+          "id": "khronos:avocado",
+          "title": "Avocado",
+          "author": "Public",
+          "license": "CC0-1.0",
+          "sourceUrl": "https://github.com/KhronosGroup/glTF-Sample-Assets/tree/main/Models/Avocado"
+        },
+        {
+          "id": "khronos:boombox",
+          "title": "Boombox",
+          "author": "Public",
+          "license": "CC0-1.0",
+          "sourceUrl": "https://github.com/KhronosGroup/glTF-Sample-Assets/tree/main/Models/BoomBox"
+        },
+        {
+          "id": "khronos:fox",
+          "title": "Fox",
+          "author": "Public",
+          "license": "CC0-1.0",
+          "sourceUrl": "https://github.com/KhronosGroup/glTF-Sample-Assets/tree/main/Models/Fox"
+        },
+        {
+          "id": "khronos:waterbottle",
+          "title": "Water bottle",
+          "author": "Public",
+          "license": "CC0-1.0",
+          "sourceUrl": "https://github.com/KhronosGroup/glTF-Sample-Assets/tree/main/Models/WaterBottle"
+        },
+        {
+          "id": "khronos:barramundifish",
+          "title": "Fish",
+          "author": "Public",
+          "license": "CC0-1.0",
+          "sourceUrl": "https://github.com/KhronosGroup/glTF-Sample-Assets/tree/main/Models/BarramundiFish"
+        },
+        {
+          "id": "khronos:toycar",
+          "title": "Toy car",
+          "author": "Public",
+          "license": "CC0-1.0",
+          "sourceUrl": "https://github.com/KhronosGroup/glTF-Sample-Assets/tree/main/Models/ToyCar"
+        },
+        {
+          "id": "khronos:corset",
+          "title": "Corset",
+          "author": "UX3D",
+          "license": "CC0-1.0",
+          "sourceUrl": "https://github.com/KhronosGroup/glTF-Sample-Assets/tree/main/Models/Corset"
+        },
+        {
+          "id": "khronos:antiquecamera",
+          "title": "Antique camera",
+          "author": "UX3D",
+          "license": "CC0-1.0",
+          "sourceUrl": "https://github.com/KhronosGroup/glTF-Sample-Assets/tree/main/Models/AntiqueCamera"
+        },
+        {
+          "id": "khronos:damagedhelmet",
+          "title": "Helmet",
+          "author": "ctxwing",
+          "license": "CC-BY-4.0",
+          "sourceUrl": "https://github.com/KhronosGroup/glTF-Sample-Assets/tree/main/Models/DamagedHelmet"
+        },
+        {
+          "id": "khronos:cesiumman",
+          "title": "Person",
+          "author": "Cesium",
+          "license": "CC-BY-4.0",
+          "sourceUrl": "https://github.com/KhronosGroup/glTF-Sample-Assets/tree/main/Models/CesiumMan"
+        },
+        {
+          "id": "khronos:boxtextured",
+          "title": "Box",
+          "author": "Cesium",
+          "license": "CC-BY-4.0",
+          "sourceUrl": "https://github.com/KhronosGroup/glTF-Sample-Assets/tree/main/Models/BoxTextured"
+        }
+      ]
+    },
+    {
+      "provider": "polypizza",
+      "name": "Poly Pizza",
+      "homepage": "https://poly.pizza",
+      "license": "CC0-1.0 / CC-BY-4.0 only",
+      "note": "Online provider. Access is proxied through the deployment's own serverless function so the API key stays server-side; only CC0 and CC-BY licensed results are returned.",
+      "models": []
+    }
+  ],
+  "libraries": [
+    { "name": "three.js", "license": "MIT", "url": "https://github.com/mrdoob/three.js" },
+    { "name": "MindAR", "license": "MIT", "url": "https://github.com/hiukim/mind-ar-js" },
+    {
+      "name": "@mediapipe/tasks-vision",
+      "license": "Apache-2.0",
+      "url": "https://github.com/google-ai-edge/mediapipe"
+    },
+    { "name": "PeerJS", "license": "MIT", "url": "https://github.com/peers/peerjs" },
+    { "name": "lucide", "license": "ISC", "url": "https://github.com/lucide-icons/lucide" },
+    { "name": "Fuse.js", "license": "Apache-2.0", "url": "https://github.com/krisk/Fuse" },
+    { "name": "Inter", "license": "OFL-1.1", "url": "https://github.com/rsms/inter" },
+    { "name": "Cairo", "license": "OFL-1.1", "url": "https://github.com/googlefonts/cairo" }
+  ]
+}

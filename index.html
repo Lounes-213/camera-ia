@@ -1,0 +1,170 @@
+<!doctype html>
+<html lang="en" dir="ltr" data-theme="light">
+  <head>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, maximum-scale=1, viewport-fit=cover, user-scalable=no"
+    />
+    <title>WebAR Spatial 3D Anchor &amp; Canvas</title>
+    <meta
+      name="description"
+      content="Zero-install WebAR studio: anchor interactive 3D objects to a printed marker or to your hands. Free, open source, no account."
+    />
+    <meta name="theme-color" content="#ffffff" media="(prefers-color-scheme: light)" />
+    <meta name="theme-color" content="#0e0b09" media="(prefers-color-scheme: dark)" />
+    <meta name="color-scheme" content="light dark" />
+
+    <!-- PWA -->
+    <link rel="manifest" href="manifest.webmanifest" />
+    <link rel="icon" href="icons/icon.svg" type="image/svg+xml" />
+    <link rel="apple-touch-icon" href="icons/icon-192.png" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+    <meta name="apple-mobile-web-app-title" content="WebAR" />
+    <meta name="mobile-web-app-capable" content="yes" />
+
+    <!-- Social preview -->
+    <meta property="og:title" content="WebAR Spatial 3D Anchor &amp; Canvas" />
+    <meta
+      property="og:description"
+      content="Print a marker, point your camera and place interactive 3D objects in your room. Works on desktop and mobile, no app to install."
+    />
+    <meta property="og:type" content="website" />
+
+    <!--
+      The splash paints instantly from inline CSS so there is never a white flash
+      while the JS bundle downloads. It uses the same design tokens as the app.
+    -->
+    <style>
+      :root {
+        --splash-accent: #ff7a00;
+        --splash-accent-600: #e56a00;
+        --splash-bg: #fffdf9;
+        --splash-text: #1a1410;
+        --splash-muted: #7d6f60;
+      }
+      @media (prefers-color-scheme: dark) {
+        :root {
+          --splash-bg: #0e0b09;
+          --splash-text: #ffffff;
+          --splash-muted: rgba(255, 255, 255, 0.6);
+        }
+      }
+      html,
+      body {
+        margin: 0;
+        height: 100%;
+        background: var(--splash-bg);
+      }
+      body {
+        font-family:
+          Inter, system-ui, -apple-system, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+        color: var(--splash-text);
+      }
+      #boot-splash {
+        position: fixed;
+        inset: 0;
+        z-index: 1000;
+        display: grid;
+        place-items: center;
+        background:
+          radial-gradient(120% 90% at 50% 0%, #fff1e3 0%, transparent 60%),
+          var(--splash-bg);
+      }
+      .loader-screen__inner {
+        display: grid;
+        gap: 16px;
+        justify-items: center;
+        text-align: center;
+        padding: 24px;
+        max-width: 420px;
+      }
+      .loader-logo {
+        width: 76px;
+        height: 76px;
+        display: grid;
+        place-items: center;
+        border-radius: 24px;
+        color: #fff;
+        background: linear-gradient(140deg, #ff8f26, var(--splash-accent-600));
+        box-shadow: 0 18px 40px -18px rgba(255, 122, 0, 0.55);
+        animation: splash-pulse 2.4s cubic-bezier(0.65, 0, 0.35, 1) infinite;
+      }
+      #boot-splash h1 {
+        margin: 0;
+        font-size: 21px;
+        font-weight: 600;
+        letter-spacing: -0.01em;
+      }
+      #boot-splash .tiny {
+        margin: 0;
+        font-size: 13px;
+        color: var(--splash-muted);
+      }
+      .btn {
+        min-height: 44px;
+        padding: 0 20px;
+        border: 0;
+        border-radius: 14px;
+        font: inherit;
+        font-weight: 600;
+        color: #fff;
+        background: var(--splash-accent);
+        cursor: pointer;
+      }
+      .btn--primary:hover {
+        background: var(--splash-accent-600);
+      }
+      @keyframes splash-pulse {
+        0%,
+        100% {
+          transform: translateY(0) scale(1);
+        }
+        50% {
+          transform: translateY(-6px) scale(1.04);
+        }
+      }
+      @media (prefers-reduced-motion: reduce) {
+        .loader-logo {
+          animation: none;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div id="app"></div>
+
+    <div id="boot-splash" role="status" aria-live="polite">
+      <div class="loader-screen__inner">
+        <div class="loader-logo" aria-hidden="true">
+          <svg
+            width="34"
+            height="34"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          >
+            <path d="M12 8V4H8" />
+            <rect width="16" height="12" x="4" y="8" rx="2" />
+            <path d="M2 14h2M20 14h2M15 13v2M9 13v2" />
+          </svg>
+        </div>
+        <h1>WebAR Spatial Anchor</h1>
+        <p class="tiny">Starting camera and 3D engine…</p>
+      </div>
+    </div>
+
+    <noscript>
+      <div style="padding: 24px; font-family: system-ui, sans-serif">
+        <h1>JavaScript is required</h1>
+        <p>This experience needs JavaScript and a camera to run. Please enable JavaScript.</p>
+      </div>
+    </noscript>
+
+    <script type="module" src="/src/main.ts"></script>
+  </body>
+</html>

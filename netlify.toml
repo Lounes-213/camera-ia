@@ -1,0 +1,50 @@
+# Netlify deployment configuration
+#
+# 1. Connect the repository to Netlify (free tier is enough).
+# 2. Netlify reads this file automatically: build, publish dir, functions.
+# 3. Add the optional search proxy key under
+#    Site configuration → Environment variables → POLY_PIZZA_KEY.
+#
+# The Functions directory mirrors the Cloudflare Pages layout so the same code
+# serves `/api/search` and `/api/model` on both hosts.
+
+[build]
+  command = "npm ci && npm run prepare:assets && npm run build"
+  publish = "dist"
+  functions = "functions"
+
+[build.environment]
+  NODE_VERSION = "20"
+  NPM_FLAGS = "--no-audit --no-fund"
+
+# Netlify Functions in this folder use the Web-standard handler signature.
+[functions]
+  node_bundler = "esbuild"
+
+[[redirects]]
+  from = "/api/*"
+  to = "/.netlify/functions/:splat"
+  status = 200
+
+# SPA fallback: everything else serves the app shell.
+[[redirects]]
+  from = "/*"
+  to = "/index.html"
+  status = 200
+
+[[headers]]
+  for = "/*"
+  [headers.values]
+    Permissions-Policy = "camera=(self), microphone=(self), xr-spatial-tracking=(self), geolocation=()"
+    Referrer-Policy = "strict-origin-when-cross-origin"
+    X-Content-Type-Options = "nosniff"
+
+[[headers]]
+  for = "/assets/*"
+  [headers.values]
+    Cache-Control = "public, max-age=31536000, immutable"
+
+[[headers]]
+  for = "/sw.js"
+  [headers.values]
+    Cache-Control = "no-cache, no-store, must-revalidate"

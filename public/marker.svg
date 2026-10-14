@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1024" height="1024" viewBox="0 0 1024 1024">
+  <title>WebAR Spatial Anchor - tracking marker</title>
+  <rect width="1024" height="1024" fill="#FFFDF9"/>
+  <rect x="24" y="24" width="976" height="976" fill="none" stroke="#111111" stroke-width="34"/>
+  <rect x="64" y="64" width="896" height="896" fill="none" stroke="#111111" stroke-width="10"/>
+  <rect x="0" y="0" width="150" height="46" fill="#FF7A00"/>
+  <rect x="978" y="0" width="46" height="150" fill="#FF7A00"/>
+  <rect x="874" y="978" width="150" height="46" fill="#FF7A00"/>
+  <rect x="0" y="978" width="46" height="46" fill="#FF7A00"/>
+  <rect x="0" y="0" width="46" height="46" fill="#E56A00"/>
+  <circle cx="512" cy="512" r="176" fill="#FFFFFF" stroke="#111111" stroke-width="16"/>
+  <path d="M420 454 L466 574 L512 478 L558 574 L604 454" fill="none" stroke="#FF7A00" stroke-width="30" stroke-linecap="round" stroke-linejoin="round"/>
+  <circle cx="630" cy="390" r="26" fill="#E56A00"/>
+  <text x="512" y="928" text-anchor="middle" font-family="Arial, sans-serif" font-size="34" font-weight="700" fill="#111111">WebAR - print this marker - point the camera at it</text>
+</svg>

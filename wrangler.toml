@@ -1,0 +1,26 @@
+# Cloudflare Pages configuration (free tier).
+#
+# Dashboard route (recommended):
+#   1. Workers & Pages → Create → Pages → Connect to Git.
+#   2. Build command: `npm run prepare:assets && npm run build`
+#   3. Build output directory: `dist`
+#   4. Settings → Environment variables → add POLY_PIZZA_KEY (encrypted) to use
+#      the online model search. Without it the app silently uses the offline
+#      index, so the key is genuinely optional.
+#
+# The `functions/` directory is detected automatically and provides
+# /api/search and /api/model.
+#
+# CLI route:
+#   npx wrangler pages project create webar-spatial-anchor
+#   npx wrangler pages deploy dist --project-name webar-spatial-anchor
+
+name = "webar-spatial-anchor"
+compatibility_date = "2026-10-01"
+pages_build_output_dir = "dist"
+
+[vars]
+# Non-secret defaults. Add POLY_PIZZA_KEY through the dashboard (or
+# `npx wrangler pages secret put POLY_PIZZA_KEY`) so it is never in the repo.
+POLY_PIZZA_BASE = "https://api.poly.pizza/v1.1"
+RATE_LIMIT_PER_MINUTE = "30"

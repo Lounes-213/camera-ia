@@ -1,0 +1,51 @@
+# Headers for Netlify and Cloudflare Pages (both read `_headers` from the
+# published directory). Vite copies this file from /public into dist/.
+#
+# `Permissions-Policy` must EXPLICITLY allow the camera, otherwise a hosting
+# provider that sets a stricter default would break tracking.
+
+/*
+  Permissions-Policy: camera=(self), microphone=(self), xr-spatial-tracking=(self), geolocation=()
+  Referrer-Policy: strict-origin-when-cross-origin
+  X-Content-Type-Options: nosniff
+  X-Frame-Options: SAMEORIGIN
+  Cross-Origin-Opener-Policy: same-origin
+  # NOTE: COEP/COOP enable SharedArrayBuffer (faster wasm) but would block the
+  # remote model CDN unless it sends CORP headers. Leave COEP commented unless
+  # you self-host models.
+  # Cross-Origin-Embedder-Policy: require-corp
+
+# Compressed wasm + task files
+/mediapipe/*
+  Content-Type: application/octet-stream
+  Cache-Control: public, max-age=31536000, immutable
+
+/wasm/*
+  Content-Type: application/wasm
+  Cache-Control: public, max-age=31536000, immutable
+
+# Self-hosted decoders
+/draco/*
+  Cache-Control: public, max-age=31536000, immutable
+
+/basis/*
+  Cache-Control: public, max-age=31536000, immutable
+
+# The compiled tracking target changes only when the marker changes.
+/targets.mind
+  Cache-Control: public, max-age=86400
+
+# Hashed build assets
+/assets/*
+  Cache-Control: public, max-age=31536000, immutable
+
+# The service worker must never be cached, or updates stall.
+/sw.js
+  Cache-Control: no-cache, no-store, must-revalidate
+
+/index.html
+  Cache-Control: no-cache
+
+# Large media
+/*.png
+  Cache-Control: public, max-age=604800

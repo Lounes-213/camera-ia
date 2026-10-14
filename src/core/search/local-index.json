@@ -1,0 +1,127 @@
+{
+  "version": 1,
+  "attribution": "Models from the Khronos Group glTF Sample Assets repository, licensed CC0-1.0 or CC-BY-4.0.",
+  "models": [
+    {
+      "id": "khronos:lantern",
+      "title": { "en": "Lantern", "fr": "Lanterne", "ar": "فانوس" },
+      "author": "Microsoft",
+      "license": "CC0-1.0",
+      "sourceUrl": "https://github.com/KhronosGroup/glTF-Sample-Assets/tree/main/Models/Lantern",
+      "glb": "https://raw.githubusercontent.com/KhronosGroup/glTF-Sample-Assets/main/Models/Lantern/glTF-Binary/Lantern.glb",
+      "thumbnail": "https://raw.githubusercontent.com/KhronosGroup/glTF-Sample-Assets/main/Models/Lantern/screenshot/screenshot.jpg",
+      "tags": ["lantern", "lamp", "light", "lampe", "lanterne", "فانوس", "مصباح", "جراج", "candle", "night"]
+    },
+    {
+      "id": "khronos:avocado",
+      "title": { "en": "Avocado", "fr": "Avocat", "ar": "أفوكادو" },
+      "author": "Public",
+      "license": "CC0-1.0",
+      "sourceUrl": "https://github.com/KhronosGroup/glTF-Sample-Assets/tree/main/Models/Avocado",
+      "glb": "https://raw.githubusercontent.com/KhronosGroup/glTF-Sample-Assets/main/Models/Avocado/glTF-Binary/Avocado.glb",
+      "thumbnail": "https://raw.githubusercontent.com/KhronosGroup/glTF-Sample-Assets/main/Models/Avocado/screenshot/screenshot.jpg",
+      "tags": ["avocado", "fruit", "food", "avocat", "أفوكادو", "فاكهة", "فواكه", "green"]
+    },
+    {
+      "id": "khronos:boombox",
+      "title": { "en": "Boombox", "fr": "Radio-cassette", "ar": "مسجل" },
+      "author": "Public",
+      "license": "CC0-1.0",
+      "sourceUrl": "https://github.com/KhronosGroup/glTF-Sample-Assets/tree/main/Models/BoomBox",
+      "glb": "https://raw.githubusercontent.com/KhronosGroup/glTF-Sample-Assets/main/Models/BoomBox/glTF-Binary/BoomBox.glb",
+      "thumbnail": "https://raw.githubusercontent.com/KhronosGroup/glTF-Sample-Assets/main/Models/BoomBox/screenshot/screenshot.jpg",
+      "tags": ["boombox", "radio", "speaker", "music", "audio", "radio cassette", "مسجل", "راديو", "مكبر صوت", "سلندر"]
+    },
+    {
+      "id": "khronos:fox",
+      "title": { "en": "Fox", "fr": "Renard", "ar": "ثعلب" },
+      "author": "Public",
+      "license": "CC0-1.0",
+      "sourceUrl": "https://github.com/KhronosGroup/glTF-Sample-Assets/tree/main/Models/Fox",
+      "glb": "https://raw.githubusercontent.com/KhronosGroup/glTF-Sample-Assets/main/Models/Fox/glTF-Binary/Fox.glb",
+      "thumbnail": "https://raw.githubusercontent.com/KhronosGroup/glTF-Sample-Assets/main/Models/Fox/screenshot/screenshot.jpg",
+      "animated": true,
+      "tags": ["fox", "animal", "pet", "renard", "ثعلب", "حيوان", "wolf", "dog"]
+    },
+    {
+      "id": "khronos:waterbottle",
+      "title": { "en": "Water bottle", "fr": "Bouteille d'eau", "ar": "قارورة ماء" },
+      "author": "Public",
+      "license": "CC0-1.0",
+      "sourceUrl": "https://github.com/KhronosGroup/glTF-Sample-Assets/tree/main/Models/WaterBottle",
+      "glb": "https://raw.githubusercontent.com/KhronosGroup/glTF-Sample-Assets/main/Models/WaterBottle/glTF-Binary/WaterBottle.glb",
+      "thumbnail": "https://raw.githubusercontent.com/KhronosGroup/glTF-Sample-Assets/main/Models/WaterBottle/screenshot/screenshot.jpg",
+      "tags": ["bottle", "water", "bouteille", "eau", "قارورة", "زجاجة", "ماء", "drink", "cup"]
+    },
+    {
+      "id": "khronos:barramundifish",
+      "title": { "en": "Fish", "fr": "Poisson", "ar": "سمكة" },
+      "author": "Public",
+      "license": "CC0-1.0",
+      "sourceUrl": "https://github.com/KhronosGroup/glTF-Sample-Assets/tree/main/Models/BarramundiFish",
+      "glb": "https://raw.githubusercontent.com/KhronosGroup/glTF-Sample-Assets/main/Models/BarramundiFish/glTF-Binary/BarramundiFish.glb",
+      "thumbnail": "https://raw.githubusercontent.com/KhronosGroup/glTF-Sample-Assets/main/Models/BarramundiFish/screenshot/screenshot.jpg",
+      "tags": ["fish", "poisson", "سمكة", "سمك", "sea", "animal", "حوت", "seafood"]
+    },
+    {
+      "id": "khronos:toycar",
+      "title": { "en": "Toy car", "fr": "Voiture miniature", "ar": "سيارة لعبة" },
+      "author": "Public",
+      "license": "CC0-1.0",
+      "sourceUrl": "https://github.com/KhronosGroup/glTF-Sample-Assets/tree/main/Models/ToyCar",
+      "glb": "https://raw.githubusercontent.com/KhronosGroup/glTF-Sample-Assets/main/Models/ToyCar/glTF-Binary/ToyCar.glb",
+      "thumbnail": "https://raw.githubusercontent.com/KhronosGroup/glTF-Sample-Assets/main/Models/ToyCar/screenshot/screenshot.jpg",
+      "tags": ["car", "toy", "vehicle", "voiture", "سيارة", "طوموبيل", "auto", "truck", "racing"]
+    },
+    {
+      "id": "khronos:corset",
+      "title": { "en": "Corset", "fr": "Corset", "ar": "كورسيه" },
+      "author": "UX3D",
+      "license": "CC0-1.0",
+      "sourceUrl": "https://github.com/KhronosGroup/glTF-Sample-Assets/tree/main/Models/Corset",
+      "glb": "https://raw.githubusercontent.com/KhronosGroup/glTF-Sample-Assets/main/Models/Corset/glTF-Binary/Corset.glb",
+      "thumbnail": "https://raw.githubusercontent.com/KhronosGroup/glTF-Sample-Assets/main/Models/Corset/screenshot/screenshot.jpg",
+      "tags": ["corset", "clothes", "clothing", "fashion", "vetement", "كورسيه", "ملابس", "dress"]
+    },
+    {
+      "id": "khronos:antiquecamera",
+      "title": { "en": "Antique camera", "fr": "Appareil photo ancien", "ar": "كاميرا قديمة" },
+      "author": "UX3D",
+      "license": "CC0-1.0",
+      "sourceUrl": "https://github.com/KhronosGroup/glTF-Sample-Assets/tree/main/Models/AntiqueCamera",
+      "glb": "https://raw.githubusercontent.com/KhronosGroup/glTF-Sample-Assets/main/Models/AntiqueCamera/glTF-Binary/AntiqueCamera.glb",
+      "thumbnail": "https://raw.githubusercontent.com/KhronosGroup/glTF-Sample-Assets/main/Models/AntiqueCamera/screenshot/screenshot.jpg",
+      "tags": ["camera", "appareil photo", "كاميرا", "photo", "photography", "vintage", "old"]
+    },
+    {
+      "id": "khronos:damagedhelmet",
+      "title": { "en": "Helmet", "fr": "Casque", "ar": "خوذة" },
+      "author": "ctxwing",
+      "license": "CC-BY-4.0",
+      "sourceUrl": "https://github.com/KhronosGroup/glTF-Sample-Assets/tree/main/Models/DamagedHelmet",
+      "glb": "https://raw.githubusercontent.com/KhronosGroup/glTF-Sample-Assets/main/Models/DamagedHelmet/glTF-Binary/DamagedHelmet.glb",
+      "thumbnail": "https://raw.githubusercontent.com/KhronosGroup/glTF-Sample-Assets/main/Models/DamagedHelmet/screenshot/screenshot.png",
+      "tags": ["helmet", "casque", "خوذة", "armor", "space", "soldier", "warrior"]
+    },
+    {
+      "id": "khronos:cesiumman",
+      "title": { "en": "Person", "fr": "Personnage", "ar": "شخص" },
+      "author": "Cesium",
+      "license": "CC-BY-4.0",
+      "sourceUrl": "https://github.com/KhronosGroup/glTF-Sample-Assets/tree/main/Models/CesiumMan",
+      "glb": "https://raw.githubusercontent.com/KhronosGroup/glTF-Sample-Assets/main/Models/CesiumMan/glTF-Binary/CesiumMan.glb",
+      "animated": true,
+      "tags": ["person", "man", "human", "character", "personnage", "شخص", "رجل", "إنسان", "walking", "robot"]
+    },
+    {
+      "id": "khronos:boxtextured",
+      "title": { "en": "Box", "fr": "Boîte", "ar": "صندوق" },
+      "author": "Cesium",
+      "license": "CC-BY-4.0",
+      "sourceUrl": "https://github.com/KhronosGroup/glTF-Sample-Assets/tree/main/Models/BoxTextured",
+      "glb": "https://raw.githubusercontent.com/KhronosGroup/glTF-Sample-Assets/main/Models/BoxTextured/glTF-Binary/BoxTextured.glb",
+      "thumbnail": "https://raw.githubusercontent.com/KhronosGroup/glTF-Sample-Assets/main/Models/BoxTextured/screenshot/screenshot.png",
+      "tags": ["box", "cube", "boite", "boîte", "صندوق", "علبة", "crate", "package", "carton"]
+    }
+  ]
+}

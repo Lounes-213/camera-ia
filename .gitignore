@@ -1,0 +1,13 @@
+node_modules/
+dist/
+coverage/
+*.local
+.env
+.env.*
+!.env.example
+.DS_Store
+.vite/
+# Large third-party binaries copied by scripts (re-create with npm run prepare:assets)
+public/mediapipe/
+*.tsbuildinfo
+.freebuff/
