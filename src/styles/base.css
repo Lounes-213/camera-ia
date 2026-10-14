@@ -49,9 +49,13 @@ body {
 }
 
 img,
-svg,
-video,
-canvas {
+svg {
+  display: block;
+  max-width: 100%;
+}
+
+video:not(.stage video),
+canvas:not(.stage canvas) {
   display: block;
   max-width: 100%;
 }

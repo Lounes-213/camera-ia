@@ -252,7 +252,9 @@
     "handsOff": "Mode marqueur activé",
     "paused": "Rendu en pause",
     "resumed": "Rendu repris",
-    "qualityDowngraded": "Qualité réduite pour maintenir 60 i/s"
+    "qualityDowngraded": "Qualité réduite pour maintenir 60 i/s",
+    "cameraFront": "Caméra frontale activée",
+    "cameraBack": "Caméra arrière activée"
   },
   "common": {
     "close": "Fermer",

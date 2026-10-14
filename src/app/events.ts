@@ -84,6 +84,7 @@ export interface AppEvents {
   'export:request': Record<string, never>;
   'export:ready': { blob: Blob; name: string };
   'camera:switch': Record<string, never>;
+  'camera:switched': { isFront: boolean };
   'camera:list': { devices: { id: string; label: string }[] };
   'render:pause': { paused: boolean };
   'ui:toast': { key?: TranslationKey; message?: string; kind?: ToastKind; ttl?: number };

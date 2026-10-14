@@ -493,11 +493,20 @@ export async function shareSnapshot(blob: Blob, dataUrl: string): Promise<void> 
 // ---- camera / fullscreen ---------------------------------------------------
 
 /** Switches between the front and rear camera. */
-export async function switchCamera(): Promise<void> {
-  if (!runtime.ar) return;
-  const devices = await runtime.ar.listCameras();
-  bus.emit('camera:list', { devices });
-  await runtime.ar.switchCamera();
+export async function switchCamera(): Promise<boolean> {
+  if (!runtime.ar) return false;
+  try {
+    const devices = await runtime.ar.listCameras();
+    bus.emit('camera:list', { devices });
+    await runtime.ar.switchCamera();
+    const isFront = runtime.ar.isFrontCamera();
+    bus.emit('camera:switched', { isFront });
+    toast(isFront ? 'toast.cameraFront' : 'toast.cameraBack', 'info');
+    return isFront;
+  } catch (err) {
+    console.warn('[actions] switchCamera failed', err);
+    return false;
+  }
 }
 
 /** Toggles fullscreen on the app root. */

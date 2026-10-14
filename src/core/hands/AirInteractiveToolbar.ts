@@ -23,6 +23,7 @@ export type AirToolId =
   | 'brush'
   | 'eraser'
   | 'grab'
+  | 'switch_cam'
   | 'paper_ocr'
   | 'youtube'
   | 'color_cyan'
@@ -49,6 +50,7 @@ export const AIR_TOOLS: readonly AirToolDef[] = [
   { id: 'brush', label: 'فرشاة نيون (Pinceau)', icon: 'Sparkles', group: 'draw' },
   { id: 'eraser', label: 'ممحاة ذكية (Gomme)', icon: 'Trash2', group: 'draw' },
   { id: 'grab', label: 'إمساك المجسم (Saisir 3D)', icon: 'Hand', group: 'draw' },
+  { id: 'switch_cam', label: 'تبديل الكاميرا (Flip)', icon: 'SwitchCamera', group: 'draw' },
   { id: 'paper_ocr', label: 'حروف الورقة (Touch-to-Type)', icon: 'ScanLine', group: 'draw' },
   { id: 'youtube', label: 'يوتيوب AR شفاف (YouTube)', icon: 'Tv', group: 'draw' },
 
@@ -104,8 +106,10 @@ export class AirInteractiveToolbar {
     this.buildTools();
     options.container.appendChild(this.element);
 
-    // Update rects after layout and on resize
+    // Update rects after layout and on resize/orientationchange
     window.addEventListener('resize', this.updateRects);
+    window.addEventListener('orientationchange', this.updateRects);
+    this.element.addEventListener('scroll', this.updateRects);
     requestAnimationFrame(() => this.updateRects());
   }
 
@@ -288,7 +292,7 @@ export class AirInteractiveToolbar {
       return;
     }
 
-    if (toolId === 'clear' || toolId === 'snap') {
+    if (toolId === 'clear' || toolId === 'snap' || toolId === 'switch_cam') {
       this.onToolSelected(toolId);
       return;
     }

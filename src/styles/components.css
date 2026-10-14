@@ -1082,32 +1082,41 @@ kbd {
 
 /* ---- Mid-Air Interactive Floating Toolbar (Index Finger Dwell + Fill) ---- */
 
+/* ---- Mid-Air Interactive Lateral Side Toolbar (Janibi) ---- */
+
 .air-toolbar {
   position: fixed;
-  top: 10px;
-  left: 50%;
-  transform: translateX(-50%);
+  inset-inline-end: 12px;
+  top: 50%;
+  transform: translateY(-50%);
   z-index: 35;
   display: flex;
+  flex-direction: column;
   align-items: center;
   justify-content: center;
-  gap: 7px;
-  padding: 6px 14px;
+  gap: 6px;
+  padding: 8px 6px;
   background: rgba(15, 23, 42, 0.88);
   border: 1px solid rgba(255, 255, 255, 0.16);
   backdrop-filter: blur(24px) saturate(180%);
   -webkit-backdrop-filter: blur(24px) saturate(180%);
-  border-radius: 28px;
+  border-radius: 30px;
   box-shadow: 0 16px 40px -10px rgba(0, 0, 0, 0.7), 0 0 20px rgba(0, 240, 255, 0.15);
   user-select: none;
-  max-width: 96vw;
-  overflow-x: auto;
+  max-height: 84vh;
+  overflow-y: auto;
+  overflow-x: hidden;
+  scrollbar-width: none;
+}
+
+.air-toolbar::-webkit-scrollbar {
+  display: none;
 }
 
 .air-tool {
   position: relative;
-  width: 44px;
-  height: 44px;
+  width: 38px;
+  height: 38px;
   border-radius: 50%;
   border: none;
   background: rgba(30, 41, 59, 0.8);
@@ -1123,22 +1132,22 @@ kbd {
 
 .air-tool:hover,
 .air-tool.is-hovered {
-  transform: scale(1.18);
+  transform: scale(1.15);
   background: rgba(51, 65, 85, 0.95);
   color: #ffffff;
-  box-shadow: 0 0 16px rgba(0, 240, 255, 0.4);
+  box-shadow: 0 0 14px rgba(0, 240, 255, 0.45);
 }
 
 .air-tool.is-active {
   background: linear-gradient(135deg, rgba(249, 115, 22, 0.3) 0%, rgba(234, 88, 12, 0.4) 100%);
   border: 1.5px solid #f97316;
   color: #ffedd5;
-  box-shadow: 0 0 16px 2px rgba(249, 115, 22, 0.55);
+  box-shadow: 0 0 14px 2px rgba(249, 115, 22, 0.55);
 }
 
 .air-tool.is-triggered {
-  transform: scale(1.35);
-  box-shadow: 0 0 24px 6px #00f0ff;
+  transform: scale(1.3);
+  box-shadow: 0 0 20px 4px #00f0ff;
   transition: transform 0.1s ease;
 }
 
@@ -1177,48 +1186,123 @@ kbd {
 }
 
 .air-tool__swatch-dot {
-  width: 20px;
-  height: 20px;
+  width: 17px;
+  height: 17px;
   border-radius: 50%;
   border: 2px solid rgba(255, 255, 255, 0.8);
   box-shadow: 0 0 8px currentColor;
 }
 
-/* ---- Live AR Status Banner (On-screen text announcement) ----------------- */
+.air-toolbar__divider {
+  width: 20px;
+  height: 1px;
+  background: rgba(255, 255, 255, 0.2);
+  margin: 2px 0;
+  flex-shrink: 0;
+}
+
+/* ---- Live AR Status Banner & Bottom Dock (Taht) ----------------- */
 
 .ar-live-banner {
   position: fixed;
-  bottom: 82px;
+  bottom: calc(14px + var(--safe-bottom, 0px));
   left: 50%;
   transform: translateX(-50%);
-  z-index: 28;
+  z-index: 30;
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 8px 18px;
-  border-radius: 20px;
+  gap: 10px;
+  padding: 6px 14px;
+  border-radius: 26px;
   background: rgba(15, 23, 42, 0.88);
   border: 1px solid rgba(255, 255, 255, 0.18);
-  backdrop-filter: blur(20px);
-  -webkit-backdrop-filter: blur(20px);
-  box-shadow: 0 10px 30px -5px rgba(0, 0, 0, 0.6);
-  pointer-events: none;
+  backdrop-filter: blur(24px) saturate(180%);
+  -webkit-backdrop-filter: blur(24px) saturate(180%);
+  box-shadow: 0 12px 35px -5px rgba(0, 0, 0, 0.7), 0 0 20px rgba(0, 240, 255, 0.15);
+  user-select: none;
+  max-width: min(94vw, 560px);
   transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
+.ar-live-banner__brand {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  color: #00f0ff;
+  font-weight: 700;
+  font-size: 13px;
+  letter-spacing: 0.03em;
+  flex-shrink: 0;
+}
+
+.ar-live-banner__logo {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 26px;
+  height: 26px;
+  border-radius: 8px;
+  background: linear-gradient(135deg, rgba(0, 240, 255, 0.25) 0%, rgba(249, 115, 22, 0.3) 100%);
+  border: 1px solid rgba(0, 240, 255, 0.5);
+  box-shadow: 0 0 10px rgba(0, 240, 255, 0.3);
+}
+
+.ar-live-banner__title {
+  font-weight: 800;
+  background: linear-gradient(135deg, #00f0ff, #ff8800);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.ar-live-banner__divider {
+  width: 1px;
+  height: 18px;
+  background: rgba(255, 255, 255, 0.2);
+  flex-shrink: 0;
+}
+
 .ar-live-banner__text {
-  font-size: 13.5px;
+  font-size: 12.5px;
   font-weight: 700;
   color: #f1f5f9;
   letter-spacing: 0.02em;
   white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: 48vw;
+}
+
+.ar-live-banner__cam-btn {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  padding: 4px 10px;
+  border-radius: 16px;
+  background: rgba(30, 41, 59, 0.8);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  color: #00f0ff;
+  font-size: 12px;
+  font-weight: 700;
+  cursor: pointer;
+  outline: none;
+  transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+  flex-shrink: 0;
+}
+
+.ar-live-banner__cam-btn:hover,
+.ar-live-banner__cam-btn:active {
+  background: rgba(0, 240, 255, 0.25);
+  border-color: #00f0ff;
+  transform: scale(1.06);
+  box-shadow: 0 0 14px rgba(0, 240, 255, 0.5);
 }
 
 .ar-live-banner--seized {
   background: rgba(234, 88, 12, 0.35);
   border-color: #f97316;
   box-shadow: 0 0 26px 4px rgba(249, 115, 22, 0.65);
-  transform: translateX(-50%) scale(1.06);
+  transform: translateX(-50%) scale(1.04);
 }
 
 .ar-live-banner--seized .ar-live-banner__text {
@@ -1230,7 +1314,7 @@ kbd {
   background: rgba(6, 182, 212, 0.35);
   border-color: #06b6d4;
   box-shadow: 0 0 24px 3px rgba(6, 182, 212, 0.6);
-  transform: translateX(-50%) scale(1.04);
+  transform: translateX(-50%) scale(1.03);
 }
 
 .ar-live-banner--draw .ar-live-banner__text {
@@ -1248,15 +1332,6 @@ kbd {
   background: rgba(168, 85, 247, 0.3);
   border-color: #a855f7;
   box-shadow: 0 0 20px 2px rgba(168, 85, 247, 0.5);
-}
-
-/* ---- Air Toolbar Divider ------------------------------------------------ */
-.air-toolbar__divider {
-  width: 1px;
-  height: 24px;
-  background: rgba(255, 255, 255, 0.2);
-  margin: 0 4px;
-  flex-shrink: 0;
 }
 
 /* ---- Spatial Paper Text HUD (champs txt) --------------------------------- */

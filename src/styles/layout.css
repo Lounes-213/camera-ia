@@ -20,14 +20,25 @@
   overflow: hidden;
   touch-action: none;
   background: #000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.stage video,
+.stage canvas {
+  max-width: none !important;
+  max-height: none !important;
+  position: absolute !important;
+  will-change: transform;
 }
 
 .stage video {
-  object-fit: cover;
+  object-fit: cover !important;
+  pointer-events: none;
 }
 
 .stage canvas {
-  position: absolute;
   inset-block-start: 0;
   inset-inline-start: 0;
 }
@@ -441,23 +452,7 @@
 /* ---- Big circular shutter button ----------------------------------------- */
 
 .shutter {
-  position: absolute;
-  inset-block-end: calc(var(--space-5) + var(--safe-bottom));
-  inset-inline-start: 50%;
-  transform: translateX(-50%);
-  z-index: var(--z-overlay);
-  width: 72px;
-  height: 72px;
-  display: grid;
-  place-items: center;
-  border-radius: var(--radius-circle);
-  border: 4px solid rgba(255, 255, 255, 0.9);
-  background: var(--accent);
-  color: #fff;
-  box-shadow:
-    0 10px 30px -8px var(--orange-glow),
-    0 0 0 1px rgba(0, 0, 0, 0.08);
-  transition: transform var(--dur-fast) var(--ease-spring);
+  display: none !important;
 }
 
 .shutter:active {
@@ -471,13 +466,7 @@
 /* ---- Floating vertical tool rail (mobile) -------------------------------- */
 
 .tool-rail {
-  position: absolute;
-  inset-block-end: calc(var(--sheet-peek) + var(--space-4) + var(--safe-bottom));
-  inset-inline-end: calc(var(--space-4) + var(--safe-inline-end));
-  z-index: var(--z-overlay);
-  display: flex;
-  flex-direction: column;
-  gap: var(--space-2);
+  display: none !important;
 }
 
 /* ---- Hand cursor & remote cursors ---------------------------------------- */
@@ -704,6 +693,31 @@
   }
   .only-desktop {
     display: none !important;
+  }
+
+  /* Compact mobile view: clean top area, brand and status live in bottom dock */
+  .topbar {
+    padding-inline: 10px;
+    padding-block-start: calc(6px + var(--safe-top));
+  }
+
+  .topbar__brand,
+  .status-chip {
+    display: none !important;
+  }
+
+  .topbar__actions {
+    position: absolute;
+    inset-inline-end: 12px;
+    inset-block-start: calc(8px + var(--safe-top));
+    gap: 6px;
+  }
+
+  .topbar__actions .icon-btn {
+    width: 34px;
+    height: 34px;
+    background: rgba(15, 23, 42, 0.75);
+    border-radius: 50%;
   }
 }
 

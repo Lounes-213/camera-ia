@@ -252,7 +252,9 @@
     "handsOff": "Marker mode enabled",
     "paused": "Rendering paused",
     "resumed": "Rendering resumed",
-    "qualityDowngraded": "Lowered quality to keep 60 FPS"
+    "qualityDowngraded": "Lowered quality to keep 60 FPS",
+    "cameraFront": "Switched to front camera",
+    "cameraBack": "Switched to rear camera"
   },
   "common": {
     "close": "Close",

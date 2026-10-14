@@ -149,7 +149,10 @@ export class App {
       },
     });
 
-    this.liveBanner = new ArLiveStatusBanner(this.root);
+    this.liveBanner = new ArLiveStatusBanner({
+      container: this.root,
+      onSwitchCamera: () => void actions.switchCamera(),
+    });
 
     this.root.append(
       this.stage,
@@ -212,6 +215,10 @@ export class App {
           container: this.stage,
           onPhase: (phase, error) => this.onPhase(phase, error ?? null),
           onTarget: (found) => actions.setTargetFound(found),
+          onVideoChange: (video) => {
+            video.style.maxWidth = 'none';
+            video.style.maxHeight = 'none';
+          },
         });
 
         const ok = await runtime.ar.init();
@@ -1031,6 +1038,9 @@ export class App {
       this.airToolbar?.setSkeletonActive(next);
       actions.setHandsStatus({ showSkeleton: next });
       this.liveBanner?.setStatus(next ? '🖐️ تم إظهار نقاط اليد (ON)' : '🖐️ تم إخفاء نقاط اليد (OFF)', 'point');
+    } else if (tool === 'switch_cam') {
+      void actions.switchCamera();
+      this.liveBanner?.setStatus('🔄 جاري تبديل الكاميرا (Changement de caméra)...', 'point');
     } else if (tool === 'snap') {
       void actions.takeSnapshot();
       this.liveBanner?.setStatus('📷 تم التقاط لقطة شاشة (Snapshot)', 'point');

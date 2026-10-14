@@ -127,6 +127,7 @@ export class ARManager {
     renderer.toneMappingExposure = 1.05;
     renderer.setClearAlpha(0); // transparent so the <video> shows through
     renderer.domElement.setAttribute('aria-hidden', 'true');
+    renderer.setPixelRatio(Math.min(window.devicePixelRatio || 1, 1.5));
 
     // Recover from GPU context loss instead of freezing on a blank canvas.
     renderer.domElement.addEventListener('webglcontextlost', this.onContextLost, false);
@@ -192,8 +193,26 @@ export class ARManager {
     this.mindar.switchCamera();
     this.running = true;
     this.detectionPaused = false;
-    // `switchCamera()` stops the old stream and creates a new <video> element.
-    this.options.onVideoChange?.(this.mindar.video);
+
+    // Allow the new video stream to attach and initialize
+    await new Promise((resolve) => setTimeout(resolve, 200));
+
+    if (this.mindar.video) {
+      this.mindar.video.style.maxWidth = 'none';
+      this.mindar.video.style.maxHeight = 'none';
+      if (this.mindar.video.readyState >= 2) {
+        this.mindar.resize();
+      } else {
+        this.mindar.video.addEventListener(
+          'loadedmetadata',
+          () => {
+            this.mindar?.resize();
+          },
+          { once: true },
+        );
+      }
+      this.options.onVideoChange?.(this.mindar.video);
+    }
     if (wasPaused) this.pauseDetection();
   }
 
